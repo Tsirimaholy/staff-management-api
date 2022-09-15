@@ -1,0 +1,29 @@
+[
+  {
+    "id": 2,
+    "date": "2022-09-15",
+    "duration": 5,
+    "is_approved": false,
+    "motif": "no motif",
+    "submission_date": null,
+    "staff_id": 2
+  },
+  {
+    "id": 3,
+    "date": "2022-09-15",
+    "duration": 5,
+    "is_approved": false,
+    "motif": "no motif",
+    "submission_date": "2022-09-15 01:28:22.323693",
+    "staff_id": 2
+  },
+  {
+    "id": 4,
+    "date": "2022-09-15",
+    "duration": 5,
+    "is_approved": false,
+    "motif": "malade",
+    "submission_date": "2022-09-15 01:31:13.712182",
+    "staff_id": 2
+  }
+]

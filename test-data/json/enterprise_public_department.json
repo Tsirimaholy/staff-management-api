@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "info"
+  },
+  {
+    "id": 2,
+    "name": "dep"
+  },
+  {
+    "id": 3,
+    "name": "some department"
+  },
+  {
+    "id": 4,
+    "name": "new department"
+  }
+]
