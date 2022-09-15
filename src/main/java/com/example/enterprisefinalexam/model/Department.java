@@ -11,9 +11,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
-import static javax.persistence.GenerationType.IDENTITY;
+import java.util.ArrayList;
+import java.util.List;
 
 @Builder
 @AllArgsConstructor
@@ -24,9 +27,13 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Table(name = "department")
 public class Department {
     @Id
-    @GeneratedValue(strategy = IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-    @Column(nullable = false, unique = true)
     private String name;
+    @ManyToMany()
+    @JoinTable(name = "department_position"
+            ,joinColumns = {@JoinColumn(name = "department_id")}
+            ,inverseJoinColumns = {@JoinColumn(name = "position_id")})
+    private List<Position> positions=new ArrayList<>();
 }

@@ -1,26 +1,21 @@
 package com.example.enterprisefinalexam.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Builder
 @AllArgsConstructor
@@ -28,17 +23,22 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "position")
-public class Position {
+public class Vacation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String name;
+    // the date of the vacation
+    private LocalDate date;
+    private String motif;
+    // number of day of duration
+    private Short duration = 1;
 
-    @ManyToMany(mappedBy = "positions")
-    @JsonIgnore
-    private List<Department> departments=new ArrayList<>();
+    @ManyToOne()
+    @JoinColumn(name = "staff_id")
+    private Staff staff;
+    @CreationTimestamp
+    private LocalDateTime submissionDate;
+    private boolean isApproved = false;
 }

@@ -1,288 +1,329 @@
-openapi: 3.0.3
+openapi: 3.0.1
 info:
-  title: Staff Management api
-  description: staff Management api
-  version: 1.0.0
+  title: OpenAPI definition
+  version: v0
 servers:
-  - url: "http://localhost:8080"
-    description: local server
-tags:
-  - name: Staff
-  - name: Vacation
-    description: All about vacation
-  - name: Position
-  - name: Department
+- url: http://localhost:8080
 paths:
   /staffs:
     get:
       tags:
-        - Staff
-      description: List all staff
-      summary: List all staff
+      - Staff
+      description: Get the list of all staff
+      summary: Get the list of all staff
+      operationId: getAll
       parameters:
-        - in: query
-          name: page
-          schema:
-            $ref: "#/components/schemas/Page"
-        - in: query
-          name: pageSize
-          schema:
-            $ref: "#/components/schemas/PageSize"
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
       responses:
-        200:
-          description: List of staff
+        "200":
+          description: OK
           content:
-            application/json:
+            '*/*':
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/CreateStaff"
-        400:
-          description: Bad Request
-    post:
+                  $ref: '#/components/schemas/Staff'
+    put:
       tags:
-        - Staff
-      description: Add new staff
-      summary: Add new staff
+      - Staff
+      operationId: saveAll
+      summary: Create or update staff
+      description: Create or update staff
       requestBody:
         content:
           application/json:
             schema:
               type: array
               items:
-                $ref: "#/components/schemas/CreateStaff"
+                $ref: '#/components/schemas/Staff'
+        required: true
       responses:
-        200:
-          description: The created user
+        "200":
+          description: OK
           content:
-            application/json:
+            '*/*':
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Staff"
-  /staffs/{id}:
-    delete:
-      tags:
-        - Staff
-      description: Delete an identified staff
-      summary: Delete an identified staff
-      parameters:
-        - name: id
-          in: path
-          required: true
-          description: The identifiers of the staff to be deleted
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: User deleted
-        400:
-          description: Bad Request
-  /staffs/{id}/vacation:
-    post:
-      tags:
-        - Vacation
-      description: Request a vacation
-      summary: Request a vacation
-      parameters:
-        - name: id
-          in: path
-          description: The identifiers of the staff
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/CreateVacation"
-      responses:
-        200:
-          description: The created vacation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Vacation"
-  /staffs/{id}/vacation/remaining:
+                  $ref: '#/components/schemas/Staff'
+  /departments:
     get:
       tags:
-        - Vacation
-      description: Get the remaining vacation for a specified staff
-      summary: Get the remaining vacation for a specified staff
+      - Department
+      operationId: getAll_2
+      summary: Create or update a department
+      description: Create or update a department
       responses:
-        200:
-          description: Remaining vacation for the identified staff
+        "200":
+          description: OK
           content:
-            application/json:
+            '*/*':
               schema:
-                $ref: '#/components/schemas/TotalVacation'
-  /departments:
-    post:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Department'
+    put:
       tags:
-        - Department
-      description: 'Create a new department'
-      summary: 'Create a new department'
+      - Department
+      operationId: create
+      description: Get all departments
+      summary: Get all departments
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Department"
+              type: array
+              items:
+                $ref: '#/components/schemas/Department'
+        required: true
       responses:
-        '200':
+        "200":
           description: OK
-  /departments/{id}:
-    delete:
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Department'
+  /staffs/{id}/vacations:
+    get:
       tags:
-        - Department
-      description: 'Create new department'
-      summary: 'Create new department'
-
+      - Staff
+      operationId: findByStaffId
+      summary: get the list of vacations request for an identified staff
+      description: Get vacations request for an identified staff
       parameters:
-        - name: id
-          in: path
-          description: The identifiers of the department
-          required: true
-          schema:
-            type: integer
-            format: int64
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
       responses:
-        '200':
-          description: Succesfully deleted
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Vacation'
+    post:
+      tags:
+      - Staff
+      operationId: requestVacation
+      summary: add new staff
+      description: add new staff
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Vacation'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Vacation'
   /positions:
     get:
       tags:
-        - Position
-      description: 'Get the list of Position'
-      summary: 'Get the list of Position'
+      - Position
+      description: get all positions
+      summary: get all positions
+      operationId: getAll_1
       responses:
-        '200':
+        "200":
           description: OK
           content:
-            application/json:
+            '*/*':
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/CreatePosition'
-        '400':
-          description: Bad Request
+                  $ref: '#/components/schemas/Position'
     post:
       tags:
-        - Position
-      description: Create a new position
-      summary: Create a new position
+      - Position
+      operationId: saveAll_1
+      summary: Create new position
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Position'
+              type: array
+              items:
+                $ref: '#/components/schemas/Position'
+        required: true
       responses:
-        200:
-          description: Succesfully created
+        "200":
+          description: OK
           content:
-            application/json:
+            '*/*':
               schema:
-                $ref: '#/components/schemas/CreatePosition'
-        400:
-          description: Bad Request
-
-
-
+                type: array
+                items:
+                  $ref: '#/components/schemas/Position'
+  /staffs/{idStaff}/positions/to/{idPosition}:
+    patch:
+      tags:
+      - Staff
+      operationId: updatePosition
+      description: change position for an identified staff
+      summary: change position for an identified staff
+      parameters:
+      - name: idStaff
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: idPosition
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Staff'
+  /vacations/today:
+    get:
+      tags:
+      - Vacation
+      summary: Get vacattions that was submitted today
+      description: Get vacattions that was submitted today
+      operationId: getTodayRequest
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Vacation'
+  /staffs/{id}:
+    delete:
+      tags:
+      - Staff
+      description: delete a staff
+      summary: delete a staff
+      operationId: fire
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
 components:
   schemas:
-    Page:
-      type: integer
-      description: Start at `1`
-    PageSize:
-      type: integer
-      description: Cannot exceed `500`
-    CreateStaff:
+    Position:
       type: object
       properties:
-        first_name:
+        id:
+          type: integer
+          format: int64
+        name:
           type: string
-          example: John
-        last_name:
+    Staff:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        firstName:
           type: string
-          example: Doe
-        birth_date:
+        lastName:
+          type: string
+        birthDate:
           type: string
           format: date
-        hiring_date:
+        hiringDate:
           type: string
           format: date
         email:
           type: string
-          format: email
-        phone:
+        phoneNumber:
           type: string
         salary:
-          type: integer
+          type: number
           format: double
-    Staff:
-      allOf:
-        - $ref: "#/components/schemas/CreateStaff"
-      type: object
-      properties:
-        id:
-          type: integer
-    CreatePosition:
-      type: object
-      properties:
-        id:
-          type: integer
-      allOf:
-        - $ref: "#/components/schemas/Position"
-    Position:
-      type: object
-      properties:
-        name:
-          type: string
-          example: HR
-
-    CreateDepartment:
-      type: object
-      properties:
-        name:
-          type: string
-          example: IT
+        position:
+          $ref: '#/components/schemas/Position'
     Department:
       type: object
       properties:
         id:
           type: integer
           format: int64
-      allOf:
-        - $ref: '#/components/schemas/CreateDepartment'
-    TotalVacation:
-      type: object
-      properties:
-        id:
-          type: integer
-        remainingVacation:
-          type: integer
-    CreateVacation:
-      type: object
-      properties:
-        date:
+        name:
           type: string
-          format: date
-        reason:
-          type: string
-        duration:
-          type: integer
-          description: The number of date of the duration
-          example: 3
-
+        positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Position'
     Vacation:
       type: object
       properties:
-        creation_date:
-          type: string
-          format: date-time
-        is_approuved:
-          type: boolean
-          default: false
         id:
           type: integer
-      allOf:
-        - $ref: "#/components/schemas/CreateVacation"
+          format: int64
+        date:
+          type: string
+          format: date
+        motif:
+          type: string
+        duration:
+          type: integer
+          format: int32
+        staff:
+          $ref: '#/components/schemas/Staff'
+        submissionDate:
+          type: string
+          format: date-time
+        approved:
+          type: boolean

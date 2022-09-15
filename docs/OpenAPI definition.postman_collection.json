@@ -1,0 +1,814 @@
+{
+	"info": {
+		"_postman_id": "f9b5842d-eb43-4877-a25b-435e75abe07d",
+		"name": "OpenAPI definition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "staffs",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "vacations",
+							"item": [
+								{
+									"name": "get the list of vacations request for an identified staff",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/staffs/:id/vacations?page=-96052286&pageSize=-96052286",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"staffs",
+												":id",
+												"vacations"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "-96052286"
+												},
+												{
+													"key": "pageSize",
+													"value": "-96052286"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-72410681",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/staffs/:id/vacations?page=-96052286&pageSize=-96052286",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"staffs",
+														":id",
+														"vacations"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "-96052286"
+														},
+														{
+															"key": "pageSize",
+															"value": "-96052286"
+														}
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-72410681",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "add new staff",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 41576191,\n  \"date\": \"2003-08-19\",\n  \"motif\": \"dolore laborum reprehenderit\",\n  \"duration\": -99726337,\n  \"staff\": {\n    \"id\": -68097740,\n    \"firstName\": \"Excepteur laboris reprehenderit Duis\",\n    \"lastName\": \"officia sed commodo\",\n    \"birthDate\": \"1952-06-20\",\n    \"hiringDate\": \"1991-05-02\",\n    \"email\": \"id dolore quis esse in\",\n    \"phoneNumber\": \"in\",\n    \"salary\": 75100120.04601395,\n    \"position\": {\n      \"id\": -43311699,\n      \"name\": \"laborum culpa enim pariatur\"\n    }\n  },\n  \"submissionDate\": \"1974-08-22T01:44:11.238Z\",\n  \"approved\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/staffs/:id/vacations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"staffs",
+												":id",
+												"vacations"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-72410681",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "add new staff"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 41576191,\n  \"date\": \"2003-08-19\",\n  \"motif\": \"dolore laborum reprehenderit\",\n  \"duration\": -99726337,\n  \"staff\": {\n    \"id\": -68097740,\n    \"firstName\": \"Excepteur laboris reprehenderit Duis\",\n    \"lastName\": \"officia sed commodo\",\n    \"birthDate\": \"1952-06-20\",\n    \"hiringDate\": \"1991-05-02\",\n    \"email\": \"id dolore quis esse in\",\n    \"phoneNumber\": \"in\",\n    \"salary\": 75100120.04601395,\n    \"position\": {\n      \"id\": -43311699,\n      \"name\": \"laborum culpa enim pariatur\"\n    }\n  },\n  \"submissionDate\": \"1974-08-22T01:44:11.238Z\",\n  \"approved\": true\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/staffs/:id/vacations",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"staffs",
+														":id",
+														"vacations"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-72410681",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "delete a staff",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/staffs/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"staffs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-72410681",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "delete a staff"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/staffs/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"staffs",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-72410681",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "deserunt Lorem nulla enim"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get the list of all staff",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/staffs?page=-96052286&pageSize=-96052286",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"staffs"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "-96052286"
+								},
+								{
+									"key": "pageSize",
+									"value": "-96052286"
+								}
+							]
+						},
+						"description": "Get the list of all staff"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/staffs?page=-96052286&pageSize=-96052286",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"staffs"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "-96052286"
+										},
+										{
+											"key": "pageSize",
+											"value": "-96052286"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Create or update staff",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"id\": 87195295,\n    \"firstName\": \"adipisicing cupidatat qui magna ipsum\",\n    \"lastName\": \"nostrud ut anim do\",\n    \"birthDate\": \"2018-01-15\",\n    \"hiringDate\": \"2021-02-08\",\n    \"email\": \"Ut nisi ipsum\",\n    \"phoneNumber\": \"id ipsum irure et\",\n    \"salary\": 82098266.74213359,\n    \"position\": {\n      \"id\": -27542161,\n      \"name\": \"officia in\"\n    }\n  },\n  {\n    \"id\": 47984954,\n    \"firstName\": \"ex fugiat anim\",\n    \"lastName\": \"esse ad enim ullamco\",\n    \"birthDate\": \"1981-06-27\",\n    \"hiringDate\": \"1959-06-16\",\n    \"email\": \"aute nisi\",\n    \"phoneNumber\": \"consequat officia\",\n    \"salary\": 27727625.505344823,\n    \"position\": {\n      \"id\": 67274240,\n      \"name\": \"voluptate adipisicing deserunt\"\n    }\n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/staffs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"staffs"
+							]
+						},
+						"description": "Create or update staff"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"id\": 79051863,\n    \"firstName\": \"cupidatat commodo dolore\",\n    \"lastName\": \"proident in nostrud labore\",\n    \"birthDate\": \"1998-06-14\",\n    \"hiringDate\": \"2018-08-03\",\n    \"email\": \"aute\",\n    \"phoneNumber\": \"veniam velit ad aliquip\",\n    \"salary\": -48466030.86930514,\n    \"position\": {\n      \"id\": -11575120,\n      \"name\": \"commodo irure ut\"\n    }\n  },\n  {\n    \"id\": 19907266,\n    \"firstName\": \"Excepteur exercita\",\n    \"lastName\": \"eu veniam dolor adipisicing\",\n    \"birthDate\": \"1948-12-20\",\n    \"hiringDate\": \"1960-03-04\",\n    \"email\": \"cillum dolore qui\",\n    \"phoneNumber\": \"eiusmod cupidatat\",\n    \"salary\": 43138332.29266533,\n    \"position\": {\n      \"id\": 82218439,\n      \"name\": \"culpa cupidatat sint\"\n    }\n  }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/staffs",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"staffs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "change position for an identified staff",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/staffs/:idStaff/positions/to/:idPosition",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"staffs",
+								":idStaff",
+								"positions",
+								"to",
+								":idPosition"
+							],
+							"variable": [
+								{
+									"key": "idStaff",
+									"value": "-72410681",
+									"description": "(Required) "
+								},
+								{
+									"key": "idPosition",
+									"value": "-72410681",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "change position for an identified staff"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/staffs/:idStaff/positions/to/:idPosition",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"staffs",
+										":idStaff",
+										"positions",
+										"to",
+										":idPosition"
+									],
+									"variable": [
+										{
+											"key": "idStaff",
+											"value": "-72410681",
+											"description": "(Required) "
+										},
+										{
+											"key": "idPosition",
+											"value": "-72410681",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "departments",
+			"item": [
+				{
+					"name": "Create or update a department",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/departments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"departments"
+							]
+						},
+						"description": "Create or update a department"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/departments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"departments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Get all departments",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"id\": 21913173,\n    \"name\": \"quis sit ut adipisicing\",\n    \"positions\": [\n      {\n        \"id\": -42654799,\n        \"name\": \"tempor amet eu elit\"\n      },\n      {\n        \"id\": 79399678,\n        \"name\": \"ad commodo qui\"\n      }\n    ]\n  },\n  {\n    \"id\": 53675046,\n    \"name\": \"amet dolor\",\n    \"positions\": [\n      {\n        \"id\": -74534704,\n        \"name\": \"nostrud\"\n      },\n      {\n        \"id\": -43814868,\n        \"name\": \"proident aliquip\"\n      }\n    ]\n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/departments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"departments"
+							]
+						},
+						"description": "Get all departments"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"id\": 74427596,\n    \"name\": \"laborum consequat id\",\n    \"positions\": [\n      {\n        \"id\": 92599159,\n        \"name\": \"nisi sunt\"\n      },\n      {\n        \"id\": 66890398,\n        \"name\": \"in et\"\n      }\n    ]\n  },\n  {\n    \"id\": -27013735,\n    \"name\": \"aute minim eu\",\n    \"positions\": [\n      {\n        \"id\": -84681353,\n        \"name\": \"sed consequat\"\n      },\n      {\n        \"id\": -41964136,\n        \"name\": \"dolor ut tempor occaecat\"\n      }\n    ]\n  }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/departments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"departments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "positions",
+			"item": [
+				{
+					"name": "get all positions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/positions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"positions"
+							]
+						},
+						"description": "get all positions"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/positions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"positions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Create new position",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"id\": 67873745,\n    \"name\": \"voluptate\"\n  },\n  {\n    \"id\": -97169283,\n    \"name\": \"quis eiusmod consectetur ut ea\"\n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/positions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"positions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"id\": 82555314,\n    \"name\": \"nisi amet Excepteur\"\n  },\n  {\n    \"id\": -23255451,\n    \"name\": \"velit nulla\"\n  }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/positions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"positions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Get vacattions that was submitted today",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/vacations/today",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vacations",
+						"today"
+					]
+				},
+				"description": "Get vacattions that was submitted today"
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vacations/today",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vacations",
+								"today"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
